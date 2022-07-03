@@ -4,6 +4,7 @@ from .serializers import BlogpostSerializer
 from rest_framework import viewsets
 from rest_framework.permissions import DjangoModelPermissions
 
+
 class BlogpostViewSet(viewsets.ModelViewSet):
     queryset = Blogpost.objects.all()
     serializer_class = BlogpostSerializer
@@ -12,7 +13,7 @@ class BlogpostViewSet(viewsets.ModelViewSet):
         """
         Instantiates and returns the list of permissions that this view requires.
         """
-        if self.action in ['list', 'retrieve']:
+        if self.action in ["list", "retrieve"]:
             permission_classes = []
         else:
             permission_classes = [DjangoModelPermissions]
