@@ -18,6 +18,7 @@ class Blogpost(models.Model):
     def __str__(self):
         return f"{self.title} | {self.created_time}"
 
+
 class Comment(models.Model):
     text = models.TextField()
     edited = models.BooleanField(default=False)
@@ -25,5 +26,3 @@ class Comment(models.Model):
     updated_time = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     blogpost = models.ForeignKey(Blogpost(), on_delete=models.CASCADE)
-
-
