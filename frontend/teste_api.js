@@ -18,7 +18,7 @@ function showPost(post) {
     header.textContent = post.title;
 
     const info = document.createElement("p");
-    info.textContent = `${post.author.name} - ${post.updated_time}`
+    info.textContent = `${post.author.username} - ${post.updated_time}`
 
     const text = document.createElement("div");
     text.textContent = post.content;
